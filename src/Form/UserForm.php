@@ -17,14 +17,34 @@ class UserForm extends Form
   protected function _buildValidator(Validator $validator)
   {
     return $validator->add('type', 'length', [
-      'rule' => ['minLength', 10],
-      'message' => 'O campo tipo é obrigatório'
-      ]);
-    }
-
-    protected function _execute(array $data)
-    {
-      return true;
-    }
+    'rule' => ['minLength', 10],
+    'message' => 'O campo tipo é obrigatório'
+    ]);
   }
+
+  protected function _execute(array $data)
+  {
+    return true;
+  }
+
+  protected function create()
+  {
+    return true;
+  }
+
+  protected function update()
+  {
+    return true;
+  }
+
+  public function findAll()
+  {
+    return true;
+  }
+
+  public function destroy($id)
+  {
+    return true;
+  }
+}
 ?>
