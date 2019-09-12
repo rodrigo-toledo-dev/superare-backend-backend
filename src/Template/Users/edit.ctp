@@ -6,8 +6,10 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li><?= $this->Html->link(__('Listar usuários'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Criar usuário'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar usuários'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Criar usuário'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listar servidores'), ['controller' => 'Servers', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Criar servidor'), ['controller' => 'Servers', 'action' => 'add']) ?></li>
         <li><?= $this->Form->postLink(
                 __('Apagar este usuário'),
                 ['action' => 'delete', $user->_id],

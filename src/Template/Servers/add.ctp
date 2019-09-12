@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $user
+ * @var \Cake\Datasource\EntityInterface $server
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -13,11 +13,14 @@
     </ul>
 </nav>
 <div class="users form large-9 medium-8 columns content">
-    <?= $this->Form->create($user) ?>
+    <?= $this->Form->create($server) ?>
     <fieldset>
-        <legend><?= __('Criando Usuário') ?></legend>
+        <legend><?= __('Criando servidor') ?></legend>
         <?php
-            echo $this->Form->select('level', ['admin' => 'Administrador', 'mantenedor' => 'Mantenedor'],['empty' => '-- Escolha o Nível --', 'required' => true]);
+            echo $this->Form->text('client',['placeholder' => '-- Digite o nome do Cliente --', 'required' => true]);
+            echo $this->Form->text('serverIp',['placeholder' => '-- Digite o IP do Servidor --', 'required' => true]);
+            echo $this->Form->select('status',['ativo' => 'Ativo', 'inativo' => 'Inativo'], ['empty' => '-- Selecione o Status do Servidor --', 'required' => true]);
+            echo $this->Form->select('user', $usersList, ['empty' => '-- Selectione o Usuário --', 'required' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Salvar')) ?>
