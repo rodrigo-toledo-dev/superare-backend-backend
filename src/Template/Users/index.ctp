@@ -18,6 +18,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= __('ID') ?></th>
+                <th scope="col"><?= __('Email') ?></th>
                 <th scope="col"><?= __('Nível') ?></th>
                 <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
@@ -26,6 +27,7 @@
             <?php foreach (json_decode($users) as $user): ?>
             <tr>
                 <td><?= $user->_id ?></td>
+                <td><?= $user->email ?></td>
                 <td><?= $user->level ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->_id]) ?>

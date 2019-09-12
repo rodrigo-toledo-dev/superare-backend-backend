@@ -17,6 +17,7 @@
     <fieldset>
         <legend><?= __('Criando Usuário') ?></legend>
         <?php
+            echo $this->Form->text('email',['placeholder' => '-- Digite o email do Usuário --', 'required' => true]);
             echo $this->Form->select('level', ['admin' => 'Administrador', 'mantenedor' => 'Mantenedor'],['empty' => '-- Escolha o Nível --', 'required' => true]);
         ?>
     </fieldset>

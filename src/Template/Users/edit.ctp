@@ -23,6 +23,7 @@
     <fieldset>
         <legend><?= __("Editando Usuário: $user->_id") ?></legend>
         <?php
+            echo $this->Form->text('email',['placeholder' => '-- Digite o email do Usuário --', 'default' => $user->email, 'required' => true]);
             echo $this->Form->select('level', ['admin' => 'Administrador', 'mantenedor' => 'Mantenedor'],['empty' => '-- Escolha o Nível --', 'default' => $user->level, 'required' => true]);
         ?>
     </fieldset>
